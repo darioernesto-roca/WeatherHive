@@ -1,0 +1,23 @@
+{
+  "name": "weatherhive",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/darioernesto-roca/WeatherHive.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/darioernesto-roca/WeatherHive/issues"
+  },
+  "homepage": "https://github.com/darioernesto-roca/WeatherHive#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

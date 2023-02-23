@@ -7,10 +7,11 @@ const tempMin = document.querySelector("#temp-min");
 const tempMax = document.querySelector("#temp-max");
 const humidityEl = document.querySelector("#humidity");
 const descriptionEl = document.querySelector("#description");
+const API_KEY = process.env.API_KEY;
 
 searchBtn.addEventListener("click", function() {
   const city = searchInput.value;
-  fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=62e5a4bd5808c27f17aecbd8efb5ac75`)
+  fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}`)
     .then(response => response.json())
     .then(data => {
       locationEl.textContent = data.name;
@@ -22,4 +23,3 @@ searchBtn.addEventListener("click", function() {
       descriptionEl.textContent = `Description: ${data.weather[0].description}`;
     });
 });
-
