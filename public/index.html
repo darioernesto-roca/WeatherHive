@@ -8,19 +8,58 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-    <h1>WeatherHive</h1>
-    <div id="search-container">
-      <input type="text" id="search-input" placeholder="Enter a city" autocomplete="off">
-      <button id="search-btn">Search</button>
-    </div>
-    <div id="weather-info">
-      <p id="location"></p>
-      <p id="temperature"></p>
-      <p id="feels-like"></p>
-      <p id="temp-min"></p>
-      <p id="temp-max"></p>
-      <p id="humidity"></p>
-      <p id="description"></p>
+    <div class="app">
+      <header class="app-header">
+        <h1>WeatherHive</h1>
+        <p class="tagline">Your daily weather companion</p>
+        <div id="search-container">
+          <input type="text" id="search-input" placeholder="Enter a city" autocomplete="off">
+          <button id="search-btn">Search</button>
+        </div>
+        <p id="status" class="status" aria-live="polite"></p>
+      </header>
+
+      <main class="content">
+        <section id="weather-summary" class="card summary-card">
+          <div class="summary-left">
+            <p id="location" class="location"></p>
+            <p id="description" class="description"></p>
+            <p id="updated-at" class="updated-at"></p>
+          </div>
+          <div class="summary-right">
+            <img id="weather-icon" alt="" />
+            <p id="temperature" class="temperature"></p>
+            <p id="feels-like" class="feels-like"></p>
+          </div>
+        </section>
+
+        <section class="details-grid">
+          <div class="detail-card">
+            <h3>Min / Max</h3>
+            <p id="temp-range"></p>
+          </div>
+          <div class="detail-card">
+            <h3>Humidity</h3>
+            <p id="humidity"></p>
+          </div>
+          <div class="detail-card">
+            <h3>Wind</h3>
+            <p id="wind"></p>
+          </div>
+          <div class="detail-card">
+            <h3>Sunrise / Sunset</h3>
+            <p id="sun-times"></p>
+          </div>
+        </section>
+
+        <section class="forecast">
+          <div class="section-header">
+            <h2>5-Day Forecast</h2>
+            <p class="section-subtitle">Midday outlook for the week ahead</p>
+          </div>
+          <div id="forecast-grid" class="forecast-grid"></div>
+        </section>
+      </main>
     </div>
   </body>
   <script src="app.js"></script>
