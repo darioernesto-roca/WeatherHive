@@ -1,5 +1,3 @@
-const API_KEY = "33aeccf8bd6c27fb3be95b572a0a89d5";
-
 const searchBtn = document.querySelector("#search-btn");
 const searchInput = document.querySelector("#search-input");
 const locationEl = document.querySelector("#location");
@@ -66,9 +64,7 @@ const renderForecast = (forecastList) => {
 
 const getForecast = async (city) => {
   const response = await fetch(
-    `https://api.openweathermap.org/data/2.5/forecast?q=${encodeURIComponent(
-      city
-    )}&units=imperial&appid=${API_KEY}`
+    `/api/forecast?city=${encodeURIComponent(city)}`
   );
   const data = await response.json();
   if (!response.ok || data.cod !== "200") {
@@ -83,9 +79,7 @@ const getForecast = async (city) => {
 
 const getWeather = async (city) => {
   const response = await fetch(
-    `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(
-      city
-    )}&units=imperial&appid=${API_KEY}`
+    `/api/weather?city=${encodeURIComponent(city)}`
   );
   const data = await response.json();
   if (!response.ok || data.cod !== 200) {
