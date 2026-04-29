@@ -34,9 +34,32 @@ current conditions and a 5-day forecast.
    - Visit `http://localhost:3000` in your browser.
 
 ## API key configuration
-The OpenWeather API key is currently hardcoded in `public/app.js`. If your key
-expires or you want to rotate it, replace the `API_KEY` value in that file.
+1. Copy `.env.example` to `.env`:
+   ```bash
+   cp .env.example .env
+   ```
+2. Set your OpenWeather API key:
+   ```env
+   OPENWEATHER_API_KEY=your_real_key
+   ```
+
+The API key is read on the server (`src/main.js`) and never hardcoded in
+`public/app.js`.
+
+## Netlify environment variable setup
+If you deploy with Netlify, set `OPENWEATHER_API_KEY` in:
+- **Site configuration → Environment variables → Add a variable**
+- Key: `OPENWEATHER_API_KEY`
+- Value: your OpenWeather API key
+
+This repo also includes `netlify.toml` configured with:
+- `publish = "public"` so Netlify serves `public/index.html` (fixes root 404s)
+- `functions = "netlify/functions"` for API proxy functions
+- redirects from `/api/weather` and `/api/forecast` to Netlify Functions
+
+Redeploy after saving so the runtime gets the updated value.
 
 ## Notes
-- The app runs entirely on the client; Express only serves static assets.
+- The front end calls local `/api/*` routes, and the Express server proxies
+  requests to OpenWeather using your environment variable.
 - No automated tests are configured yet.
