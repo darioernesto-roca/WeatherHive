@@ -5,13 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WeatherHive</title>
+    <link rel="icon" type="image/png" href="media/weather-hive-favicon.png">
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
     <div class="app">
       <header class="app-header">
-        <h1>WeatherHive</h1>
-        <p class="tagline">Your daily weather companion</p>
+        <a class="brand-link" href="/" title="WeatherHive home">
+          <img
+            class="brand-logo"
+            src="media/weatherhive-logo.png"
+            alt="WeatherHive — Your daily weather companion"
+            title="WeatherHive — Your daily weather companion"
+          />
+        </a>
         <div id="search-container">
           <input type="text" id="search-input" placeholder="Enter a city" autocomplete="off">
           <button id="search-btn">Search</button>
