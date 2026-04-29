@@ -52,7 +52,12 @@ If you deploy with Netlify, set `OPENWEATHER_API_KEY` in:
 - Key: `OPENWEATHER_API_KEY`
 - Value: your OpenWeather API key
 
-Redeploy after saving so the server/runtime gets the updated value.
+This repo also includes `netlify.toml` configured with:
+- `publish = "public"` so Netlify serves `public/index.html` (fixes root 404s)
+- `functions = "netlify/functions"` for API proxy functions
+- redirects from `/api/weather` and `/api/forecast` to Netlify Functions
+
+Redeploy after saving so the runtime gets the updated value.
 
 ## Notes
 - The front end calls local `/api/*` routes, and the Express server proxies
