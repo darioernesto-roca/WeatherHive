@@ -12,7 +12,7 @@ const buildOpenWeatherUrl = (endpoint, city) => {
   const query = new URLSearchParams({
     q: city,
     units: "imperial",
-    appid: OPENWEATHER_API_KEY
+    appid: OPENWEATHER_API_KEY,
   });
   return `https://api.openweathermap.org/data/2.5/${endpoint}?${query.toString()}`;
 };
@@ -65,6 +65,5 @@ app.get("/", (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`WeatherHive server listening on port ${PORT}`);
+  console.log(`WeatherHive server listening on port http://localhost:${PORT}`);
 });
-
