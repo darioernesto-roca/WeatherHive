@@ -43,16 +43,14 @@
     margin-bottom: 32px;
   }
 
-  h1 {
-    font-size: clamp(2.5rem, 4vw, 3.5rem);
-    font-weight: 700;
-    text-shadow: 0 10px 20px rgba(15, 23, 42, 0.4);
+  .brand-link {
+    display: inline-block;
+    text-decoration: none;
   }
 
-  .tagline {
-    margin-top: 12px;
-    font-size: 1rem;
-    color: rgba(248, 250, 252, 0.8);
+  .brand-logo {
+    width: min(360px, 70vw);
+    height: auto;
   }
 
   #search-container {
