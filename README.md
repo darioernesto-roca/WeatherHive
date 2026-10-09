@@ -5,16 +5,16 @@ JavaScript. It serves a static front end that calls the OpenWeather API to show
 current conditions and a 5-day forecast.
 
 ## Tech stack
-- Node.js + Express (static asset server)
-- HTML/CSS/JavaScript (vanilla front end)
-- OpenWeather API for weather data
+- Node.js + Express (static asset server).
+- HTML/CSS/JavaScript (vanilla front end).
+- OpenWeather API for weather data.
 
 ## Project structure
 ```
 .
 ├── public
 │   ├── app.js        # front-end logic and API calls
-│   ├── index.html    # UI markup
+│   ├── index.html    # user i+nterface markup
 │   ├── styles.css    # styling
 │   └── media         # images
 └── src
